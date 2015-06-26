@@ -1,4 +1,4 @@
-﻿namespace AutoParking
+﻿namespace AutoParking.Forms
 {
     partial class MainForm
     {

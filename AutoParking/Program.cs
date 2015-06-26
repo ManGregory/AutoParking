@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Data.Entity;
 using System.Windows.Forms;
+using AutoParking.Forms;
+using AutoParking.Models;
 
 namespace AutoParking
 {
@@ -16,7 +16,8 @@ namespace AutoParking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Database.SetInitializer(new AutoInitializer());
+            Application.Run(new LoginForm());
         }
     }
 }
