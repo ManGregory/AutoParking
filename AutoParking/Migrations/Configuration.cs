@@ -13,7 +13,7 @@ namespace AutoParking.Migrations
             ContextKey = "AutoParking.Models.AutoContext";
         }
 
-        protected override void Seed(AutoParking.Models.AutoContext context)
+        protected override void Seed(Models.AutoContext context)
         {
             //  This method will be called after migrating to the latest version.
 

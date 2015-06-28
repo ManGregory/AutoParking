@@ -12,5 +12,13 @@ namespace AutoParking.Forms
             _loginForm = loginForm;
             Closed += (o, e) => _loginForm.Close();
         }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            using (var parkingform = new ParkingForm())
+            {
+                parkingform.ShowDialog();
+            }
+        }
     }
 }
