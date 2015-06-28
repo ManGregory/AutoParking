@@ -76,6 +76,7 @@
             this.miInflations.Name = "miInflations";
             this.miInflations.Size = new System.Drawing.Size(152, 22);
             this.miInflations.Text = "Инфляция";
+            this.miInflations.Click += new System.EventHandler(this.miInflations_Click);
             // 
             // miParking
             // 

@@ -11,8 +11,10 @@ namespace AutoParking.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [DisplayName("Год")]
         public int Year { get; set; }
 
+        [DisplayName("Коэффициент инфляции")]
         public decimal Value { get; set; }
     }
 }

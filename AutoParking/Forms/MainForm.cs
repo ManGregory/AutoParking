@@ -30,5 +30,13 @@ namespace AutoParking.Forms
                 clientsForm.ShowDialog();
             }
         }
+
+        private void miInflations_Click(object sender, System.EventArgs e)
+        {
+            using (var inflationForm = new InflationForm())
+            {
+                inflationForm.ShowDialog();
+            }
+        }
     }
 }
