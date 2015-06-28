@@ -12,6 +12,13 @@ namespace AutoParking.Models
         Vip = 4
     }
 
+    public enum ParkingPlaceStatus
+    {
+        Free = 1,
+        Reservated = 2,
+        Busy = 3
+    }
+
     public class ParkingPlace
     {
         [Browsable(false)]
@@ -28,5 +35,8 @@ namespace AutoParking.Models
         public int Column { get; set; }
 
         public ParkingPlaceType ParkingPlaceType { get; set; }
+
+        [NotMapped]
+        public ParkingPlaceStatus ParkingPlaceStatus { get; set; }
     }
 }

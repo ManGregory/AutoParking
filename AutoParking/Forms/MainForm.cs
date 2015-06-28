@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using AutoParking.Helper;
 
 namespace AutoParking.Forms
 {
@@ -11,6 +12,7 @@ namespace AutoParking.Forms
             InitializeComponent();
             _loginForm = loginForm;
             Closed += (o, e) => _loginForm.Close();
+            Text += string.Format(", {0}", Current.CurrentUser.Name);
         }
 
         private void button1_Click(object sender, System.EventArgs e)

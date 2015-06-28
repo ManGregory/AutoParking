@@ -70,11 +70,16 @@
       <DependentUpon>ParkingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\Current.cs" />
+    <Compile Include="Helper\DbHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AutoContext.cs" />
     <Compile Include="Models\AutoInitializer.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Inflation.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Parking.cs" />
     <Compile Include="Models\ParkingPlace.cs" />
+    <Compile Include="Models\Rate.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,7 +113,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="images\busycar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\reservecar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

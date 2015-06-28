@@ -4,20 +4,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AutoParking.Models
 {
-    public class Parking
+    public class Rate
     {
         [Browsable(false)]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public int Width { get; set; }
+        public ParkingPlaceType ParkingPlaceType { get; set; }
 
-        public int Height { get; set; }
-
-        [StringLength(100)]
-        public string Name { get; set; }
-
-        public decimal Cost { get; set; }
+        public decimal Value { get; set; }
     }
 }
