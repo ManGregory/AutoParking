@@ -69,6 +69,7 @@
             this.miClients.Name = "miClients";
             this.miClients.Size = new System.Drawing.Size(152, 22);
             this.miClients.Text = "Клиенты";
+            this.miClients.Click += new System.EventHandler(this.miClients_Click);
             // 
             // miInflations
             // 

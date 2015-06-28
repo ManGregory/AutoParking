@@ -22,5 +22,13 @@ namespace AutoParking.Forms
                 parkingform.ShowDialog();
             }
         }
+
+        private void miClients_Click(object sender, System.EventArgs e)
+        {
+            using (var clientsForm = new ClientForm())
+            {
+                clientsForm.ShowDialog();
+            }
+        }
     }
 }
