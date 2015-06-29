@@ -38,5 +38,19 @@ namespace AutoParking.Models
 
         [NotMapped]
         public ParkingPlaceStatus ParkingPlaceStatus { get; set; }
+
+        public static string ConvertParkingPlaceType(ParkingPlaceType parkingPlaceType)
+        {
+            if (parkingPlaceType == ParkingPlaceType.OnceOnly) return "Разовый";
+            if (parkingPlaceType == ParkingPlaceType.OnceOnly) return "Эконом";
+            if (parkingPlaceType == ParkingPlaceType.OnceOnly) return "Средний";
+            return "VIP";
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Стояночное место {0} ({1},{2})", ConvertParkingPlaceType(ParkingPlaceType), Row,
+                Column);
+        }
     }
 }

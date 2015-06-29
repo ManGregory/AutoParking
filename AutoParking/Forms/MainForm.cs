@@ -1,5 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System.Data.Entity;
+using System.Linq;
+using System.Windows.Forms;
 using AutoParking.Helper;
+using AutoParking.Models;
 
 namespace AutoParking.Forms
 {
@@ -13,13 +16,23 @@ namespace AutoParking.Forms
             _loginForm = loginForm;
             Closed += (o, e) => _loginForm.Close();
             Text += string.Format(", {0}", Current.CurrentUser.Name);
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            using (var db = new AutoContext())
+            {
+                db.Orders.Load();
+                dgwOrders.DataSource = db.Orders.Local.ToBindingList();
+            }
         }
 
         private void button1_Click(object sender, System.EventArgs e)
         {
             using (var parkingform = new ParkingForm())
             {
-                parkingform.ShowDialog();
+                parkingform.ShowDialog(this);
             }
         }
 
@@ -27,7 +40,7 @@ namespace AutoParking.Forms
         {
             using (var clientsForm = new ClientForm())
             {
-                clientsForm.ShowDialog();
+                clientsForm.ShowDialog(this);
             }
         }
 
@@ -35,7 +48,15 @@ namespace AutoParking.Forms
         {
             using (var inflationForm = new InflationForm())
             {
-                inflationForm.ShowDialog();
+                inflationForm.ShowDialog(this);
+            }
+        }
+
+        private void btnAdd_Click(object sender, System.EventArgs e)
+        {
+            using (var orderForm = new OrderForm())
+            {
+                orderForm.ShowDialog(this);
             }
         }
     }
